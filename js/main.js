@@ -24,10 +24,9 @@ const initBoard = () => {
   }
 };
 
-
-
 // For loadPieces()
-let setupString = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR"
+let setupString = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
+// setupString = "8/8/8/4p1K1/2k1P3/8/8/8"
 let boardMap = [
   [0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0],
@@ -39,22 +38,22 @@ let boardMap = [
   [0, 0, 0, 0, 0, 0, 0, 0],
 ];
 let valueMap = {
-  "p": "bpawn",
-  "r": "brook",
-  "b": "bbishop",
-  "n": "bknight",
-  "q": "bqueen",
-  "k": "bking",
-  "P": "wpawn",
-  "R": "wrook",
-  "B": "wbishop",
-  "N": "wknight",
-  "Q": "wqueen",
-  "K": "wking",
+  p: "bpawn",
+  r: "brook",
+  b: "bbishop",
+  n: "bknight",
+  q: "bqueen",
+  k: "bking",
+  P: "wpawn",
+  R: "wrook",
+  B: "wbishop",
+  N: "wknight",
+  Q: "wqueen",
+  K: "wking",
 };
 
-const loadPositions = (j,i,char) => {
-  console.log("loading positions " + valueMap[char] + j + i )
+const loadPositions = (j, i, char) => {
+  console.log(`${char}: ${i}, ${j}`);
   switch (valueMap[char]) {
     case "wpawn":
       // context.drawImage(WPAWN, j * 100 + 25, i * 100 + 25, 50, 50);
@@ -114,13 +113,20 @@ const setupFromFEN = (FEN) => {
     switch (char) {
       case "/":
         row++;
+        col = 0
         break;
       default:
-        loadPositions(col,row,char);
+        if (parseInt(char, 10).toString() === char) {
+          col += parseInt(char, 10);
+          break;
+        }
+        loadPositions(col % 8, row, char);
+        col++;
+        break;
     }
-    col++
-  })
-}
+    
+  });
+};
 
 initBoard();
 setupFromFEN(setupString);
