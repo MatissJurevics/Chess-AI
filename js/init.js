@@ -1,5 +1,5 @@
 import {boardMap, valueMap, setupString} from "./data.js"
-
+import { context } from "./board.js"
 
 const loadPositions = (j, i, char) => {
     switch (valueMap[char]) {
