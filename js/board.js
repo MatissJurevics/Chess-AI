@@ -25,7 +25,22 @@ export const initBoard = () => {
   }
 };
 
+
+let BPAWN = new Image();
+let WPAWN = new Image();
+let BROOK = new Image();
+let WROOK = new Image();
+let BBISHOP = new Image();
+let WBISHOP = new Image();
+let BKNIGHT = new Image();
+let WKNIGHT = new Image();
+let BQUEEN = new Image();
+let WQUEEN = new Image();
+let BKING = new Image();
+let WKING = new Image();
+
 const loadPos = (j, i, char) => {
+  
   switch (valueMap[char]) {
     case "wpawn":
       // context.drawImage(WPAWN, j * 100 + 25, i * 100 + 25, 50, 50);
@@ -78,8 +93,19 @@ const loadPos = (j, i, char) => {
       break;
   }
 };
+export const initPos = (i,j,char) => {
+  boardMap[i][j] = char;
+  loadPos(j,i,char)
+  console.log(boardMap)
+}
+export const reloadPos = () => {
+  for (let i = 0; i < boardMap.length; i++) {
+    for (let j = 0; j < boardMap[i].length; j++) {
 
-let WPAWN = new Image()
+    }
+
+  }
+}
 
 export const setupFromFEN = (FEN) => {
   let col = 0;
@@ -95,7 +121,7 @@ export const setupFromFEN = (FEN) => {
           col += parseInt(char, 10);
           break;
         }
-        loadPos(col % 8, row, char);
+        initPos(row,col % 8,  char);
         col++;
         break;
     }
