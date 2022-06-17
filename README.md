@@ -1,5 +1,6 @@
 # Chess AI
 A basic AI that can play chess
+![](./Screenshot%20from%202022-06-17%2017-22-09.png)
 
 ## TO-DO
 - [x] create board
