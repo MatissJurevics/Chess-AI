@@ -1,6 +1,6 @@
 import { setupString, boardMap, valueMap } from "./data.js";
 
-const canvas = document.getElementById("canvas");
+export const canvas = document.getElementById("canvas");
 canvas.style.background = "#E3E4DB";
 export const context = canvas.getContext("2d");
 
@@ -27,76 +27,76 @@ export const initBoard = () => {
 
 
 let BPAWN = new Image();
+BPAWN.src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Chess_pdt45.svg/45px-Chess_pdt45.svg.png"
 let WPAWN = new Image();
+WPAWN.src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Chess_plt45.svg/45px-Chess_plt45.svg.png"
+
 let BROOK = new Image();
+BROOK.src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Chess_rdt45.svg/45px-Chess_rdt45.svg.png"
 let WROOK = new Image();
+WROOK.src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Chess_rlt45.svg/45px-Chess_rlt45.svg.png"
 let BBISHOP = new Image();
+BBISHOP.src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Chess_bdt45.svg/45px-Chess_bdt45.svg.png"
 let WBISHOP = new Image();
+WBISHOP.src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Chess_blt45.svg/45px-Chess_blt45.svg.png"
 let BKNIGHT = new Image();
+BKNIGHT.src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Chess_ndt45.svg/45px-Chess_ndt45.svg.png"
 let WKNIGHT = new Image();
+WKNIGHT.src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Chess_nlt45.svg/45px-Chess_nlt45.svg.png"
 let BQUEEN = new Image();
+BQUEEN.src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Chess_qdt45.svg/45px-Chess_qdt45.svg.png"
 let WQUEEN = new Image();
+WQUEEN.src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Chess_qlt45.svg/45px-Chess_qlt45.svg.png"
 let BKING = new Image();
+BKING.src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Chess_kdt45.svg/45px-Chess_kdt45.svg.png"
 let WKING = new Image();
+WKING.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Chess_klt45.svg/45px-Chess_klt45.svg.png"
 
 const loadPos = (j, i, char) => {
   
   switch (valueMap[char]) {
     case "wpawn":
-      // context.drawImage(WPAWN, j * 100 + 25, i * 100 + 25, 50, 50);
-      context.fillText("Wpawn", j * 100 + 25, i * 100 + 25, 50, 50);
-
+      context.drawImage(WPAWN, j * 100 + 15, i * 100 + 15, 70, 70);
       break;
     case "bpawn":
-      context.fillText("Bpawn", j * 100 + 25, i * 100 + 25, 50, 50);
-      // context.drawImage(BPAWN, j * 100 + 25, i * 100 + 25, 50, 50);
+      context.drawImage(BPAWN, j * 100 + 15, i * 100 + 15, 70, 70);
       break;
     case "brook":
-      context.fillStyle = "red";
-      context.fillText("Brook", j * 100 + 25, i * 100 + 25, 50, 50);
+      context.drawImage(BROOK, j * 100 + 15, i * 100 + 15, 70, 70);
       break;
     case "wrook":
-      context.fillStyle = "red";
-      context.fillText("Wrook", j * 100 + 25, i * 100 + 25, 50, 50);
+      context.drawImage(WROOK, j * 100 + 15, i * 100 + 15, 70, 70);
       break;
     case "bknight":
-      context.fillStyle = "red";
-      context.fillText("Bknight", j * 100 + 25, i * 100 + 25, 50, 50);
+      context.drawImage(BKNIGHT, j * 100 + 15, i * 100 + 15, 70, 70);
       break;
     case "wknight":
-      context.fillStyle = "red";
-      context.fillText("Wknight", j * 100 + 25, i * 100 + 25, 50, 50);
+      context.drawImage(WKNIGHT, j * 100 + 15, i * 100 + 15, 70, 70);
       break;
     case "wbishop":
-      context.fillStyle = "red";
-      context.fillText("Wbishop", j * 100 + 25, i * 100 + 25, 50, 50);
+      context.drawImage(WBISHOP, j * 100 + 15, i * 100 + 15, 70, 70);
       break;
     case "bbishop":
-      context.fillStyle = "red";
-      context.fillText("Bbishop", j * 100 + 25, i * 100 + 25, 50, 50);
+      context.drawImage(BBISHOP, j * 100 + 15, i * 100 + 15, 70, 70);
       break;
     case "bqueen":
-      context.fillStyle = "red";
-      context.fillText("Bqueen", j * 100 + 25, i * 100 + 25, 50, 50);
+      context.drawImage(BQUEEN, j * 100 + 15, i * 100 + 15, 70, 70);
       break;
     case "wqueen":
-      context.fillStyle = "red";
-      context.fillText("Wqueen", j * 100 + 25, i * 100 + 25, 50, 50);
+      context.drawImage(WQUEEN, j * 100 + 15, i * 100 + 15, 70, 70);
       break;
     case "bking":
-      context.fillStyle = "red";
-      context.fillText("Bking", j * 100 + 25, i * 100 + 25, 50, 50);
+      context.drawImage(BKING, j * 100 + 15, i * 100 + 15, 70, 70);
       break;
     case "wking":
-      context.fillStyle = "red";
-      context.fillText("Wking", j * 100 + 25, i * 100 + 25, 50, 50);
+      context.drawImage(WKING, j * 100 + 15, i * 100 + 15, 70, 70);
       break;
   }
 };
 export const initPos = (i,j,char) => {
   boardMap[i][j] = char;
   loadPos(j,i,char)
-  console.log(boardMap)
+
 }
 export const reloadPos = () => {
   context.clearRect(0,0,800,800)
