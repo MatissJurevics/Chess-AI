@@ -99,11 +99,12 @@ export const initPos = (i,j,char) => {
   console.log(boardMap)
 }
 export const reloadPos = () => {
+  context.clearRect(0,0,800,800)
+  initBoard()
   for (let i = 0; i < boardMap.length; i++) {
     for (let j = 0; j < boardMap[i].length; j++) {
-
+      loadPos(j,i,boardMap[i][j])
     }
-
   }
 }
 
