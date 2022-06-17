@@ -5,8 +5,8 @@ A basic AI that can play chess
 - [x] create board
 - [x] create FEN to location converter
 - [x] Place pieces in their respective locations
-- [ ] make it possable to move pieces (no need to make them draggable yet)
-- [ ] Create chess board with moveable pieces
-- [ ] Implement proper logic for all pieces (castling, etc)
+- [x] make it possable to move pieces 
+- [ ] Implement proper logic for all pieces (excluding castling and en pessant)
+- [ ] Implement castling and en pessant
 - [ ] Create basic AI that moves at random
 - [ ] Figure the rest out...
